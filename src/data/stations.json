@@ -1,0 +1,145 @@
+[
+  {
+    "UICCode": 8400282,
+    "code": "GVC",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,       
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Den Haag Centraal",
+      "middel": "Den Haag C.",
+      "kort": "Den Haag C"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400285,
+    "code": "HLM",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Haarlem",
+      "middel": "Haarlem",
+      "kort": "Haarlem"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400292,
+    "code": "HDG",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Hurdegaryp",
+      "middel": "Hurdegaryp",
+      "kort": "Hurdegaryp"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400293,
+    "code": "HDB",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Hardenberg",
+      "middel": "Hardenberg",
+      "kort": "Hardenberg"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400294,
+    "code": "HD",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Harderwijk",
+      "middel": "Harderwijk",
+      "kort": "Harderwijk"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400295,
+    "code": "GND",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Hardinxveld-Giessendam",
+      "middel": "Hardinxveld-G.",
+      "kort": "Hardinxvld"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400296,
+    "code": "HLG",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Harlingen",
+      "middel": "Harlingen",
+      "kort": "Harlingen"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400297,
+    "code": "HRN",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Haren",
+      "middel": "Haren",
+      "kort": "Haren"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400298,
+    "code": "HLGH",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Harlingen Haven",
+      "middel": "Harlingen Haven",
+      "kort": "Harl Haven"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400299,
+    "code": "HMBH",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": true,
+    "namen": {
+      "lang": "Helmond Brouwhuis",
+      "middel": "Brouwhuis",
+      "kort": "Brouwhuis"
+    },
+    "land": "NL"
+  },
+  {
+    "UICCode": 8400300,
+    "code": "HMH",
+    "heeftFaciliteiten": true,
+    "heeftVertrektijden": true,
+    "heeftReisassistentie": false,
+    "namen": {
+      "lang": "Helmond 't Hout",
+      "middel": "'t Hout",
+      "kort": "'t Hout"
+    },
+    "land": "NL"
+  }
+]

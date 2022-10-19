@@ -1,0 +1,143 @@
+{
+"page": 1,
+"routes":
+[
+  {
+    "direction": "Amsterdam Centraal",
+    "plannedTime": "2022-10-19T10:40:00+0200",
+    "plannedTimeZoneOffset": 120,
+    "actualTime": "2022-10-19T10:40:00+0200",
+    "actualTimeZoneOffset": 120,
+    "plannedTrack": 7,
+    "trainType": "NS Sprinter",
+    "cancelled": false,
+    "routeStations": [
+      {
+        "uicCode": 8400621,
+        "stationName": "Utrecht C."
+      },
+      {
+        "uicCode": 8400057,
+        "stationName": "Amstel"
+      }
+    ],
+    "messages": []
+  },
+  {
+    "direction": "Zutphen",
+    "plannedTime": "2022-10-19T10:40:00+0200",
+    "plannedTimeZoneOffset": 120,
+    "actualTime": "2022-10-19T10:40:00+0200",
+    "actualTimeZoneOffset": 120,
+    "plannedTrack": 3,
+    "trainType": "NS Sprinter",
+    "cancelled": false,
+    "routeStations": [
+      {
+        "uicCode": 8400495,
+        "stationName": "Oss"
+      },
+      {
+        "uicCode": 8400470,
+        "stationName": "Nijmegen"
+      },
+      {
+        "uicCode": 8400071,
+        "stationName": "Arnhem C."
+      },
+      {
+        "uicCode": 8400176,
+        "stationName": "Dieren"
+      }
+    ],
+    "messages": []
+  },
+  {
+    "direction": "Venlo",
+    "plannedTime": "2022-10-19T10:40:00+0200",
+    "plannedTimeZoneOffset": 120,
+    "actualTime": "2022-10-19T10:40:00+0200",
+    "actualTimeZoneOffset": 120,
+    "plannedTrack": 6,
+    "trainType": "NS Sprinter",
+    "cancelled": false,
+    "routeStations": [
+      {
+        "uicCode": 8400206,
+        "stationName": "Eindhoven C."
+      },
+      {
+        "uicCode": 8400313,
+        "stationName": "Helmond"
+      },
+      {
+        "uicCode": 8400172,
+        "stationName": "Deurne"
+      },
+      {
+        "uicCode": 8400339,
+        "stationName": "Horst-Sevenum"
+      }
+    ],
+    "messages": []
+  },
+  {
+    "direction": "Deurne",
+    "plannedTime": "2022-10-19T10:40:00+0200",
+    "plannedTimeZoneOffset": 120,
+    "actualTime": "2022-10-19T10:40:00+0200",
+    "actualTimeZoneOffset": 120,
+    "plannedTrack": 1,
+    "trainType": "NS Sprinter",
+    "cancelled": false,
+    "routeStations": [
+      {
+        "uicCode": 8400667,
+        "mediumName": "Vught"
+      },
+      {
+        "uicCode": 8400129,
+        "stationName": "Boxtel"
+      },
+      {
+        "uicCode": 8400206,
+        "stationName": "Eindhoven C."
+      },
+      {
+        "uicCode": 8400313,
+        "stationName": "Helmond"
+      }
+    ],
+    "messages": []
+  },
+  {
+    "direction": "Arnhem Centraal",
+    "plannedTime": "2022-10-19T10:40:00+0200",
+    "plannedTimeZoneOffset": 120,
+    "actualTime": "2022-10-19T10:40:00+0200",
+    "actualTimeZoneOffset": 120,
+    "plannedTrack": 4,
+    "trainType": "NS Sprinter",
+    "cancelled": false,
+    "routeStations": [
+      {
+        "uicCode": 8400320,
+        "stationName": "'s-Hertogenb. O."
+      },
+      {
+        "uicCode": 8400495,
+        "stationName": "Oss"
+      },
+      {
+        "uicCode": 8400470,
+        "stationName": "Nijmegen"
+      },
+      {
+        "uicCode": 8400207,
+        "stationName": "Elst"
+      }
+    ],
+    "messages": []
+  }
+]
+}
