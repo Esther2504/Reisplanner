@@ -6,7 +6,9 @@ import StationPage from "./pages/StationPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
+    {/* <h1>Helloo</h1> */}
+        <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="Profile" element={<ProfilePage />} />
@@ -14,6 +16,8 @@ function App() {
         <Route path="Station" element={<StationPage />} />
       </Routes>
     </BrowserRouter>
+    </>
+
   );
 }
 
