@@ -5,11 +5,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,       
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Den Haag Centraal",
-      "middel": "Den Haag C.",
-      "kort": "Den Haag C"
-    },
+    "naam": "Den Haag Centraal",
     "land": "NL"
   },
   {
@@ -18,11 +14,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Haarlem",
-      "middel": "Haarlem",
-      "kort": "Haarlem"
-    },
+    "naam": "Haarlem",
     "land": "NL"
   },
   {
@@ -31,11 +23,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Hurdegaryp",
-      "middel": "Hurdegaryp",
-      "kort": "Hurdegaryp"
-    },
+    "naam": "Hurdegaryp",
     "land": "NL"
   },
   {
@@ -44,11 +32,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Hardenberg",
-      "middel": "Hardenberg",
-      "kort": "Hardenberg"
-    },
+    "naam": "Hardenberg",
     "land": "NL"
   },
   {
@@ -57,11 +41,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Harderwijk",
-      "middel": "Harderwijk",
-      "kort": "Harderwijk"
-    },
+    "naam": "Harderwijk",
     "land": "NL"
   },
   {
@@ -70,11 +50,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Hardinxveld-Giessendam",
-      "middel": "Hardinxveld-G.",
-      "kort": "Hardinxvld"
-    },
+    "namen": "Hardinxveld-Giessendam", 
     "land": "NL"
   },
   {
@@ -83,11 +59,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Harlingen",
-      "middel": "Harlingen",
-      "kort": "Harlingen"
-    },
+    "namen": "Harlingen",
     "land": "NL"
   },
   {
@@ -96,11 +68,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Haren",
-      "middel": "Haren",
-      "kort": "Haren"
-    },
+    "namen":  "Haren",
     "land": "NL"
   },
   {
@@ -109,11 +77,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Harlingen Haven",
-      "middel": "Harlingen Haven",
-      "kort": "Harl Haven"
-    },
+    "namen": "Harlingen Haven",
     "land": "NL"
   },
   {
@@ -122,11 +86,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": true,
-    "namen": {
-      "lang": "Helmond Brouwhuis",
-      "middel": "Brouwhuis",
-      "kort": "Brouwhuis"
-    },
+    "namen": "Helmond Brouwhuis",
     "land": "NL"
   },
   {
@@ -135,11 +95,7 @@
     "heeftFaciliteiten": true,
     "heeftVertrektijden": true,
     "heeftReisassistentie": false,
-    "namen": {
-      "lang": "Helmond 't Hout",
-      "middel": "'t Hout",
-      "kort": "'t Hout"
-    },
+    "naam": "Helmond 't Hout",
     "land": "NL"
   }
 ]
