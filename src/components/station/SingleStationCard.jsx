@@ -4,19 +4,15 @@ import { Train, Clock } from "lucide-react";
 
 const SingleStationCard = ({ item }) => {
   const today = new Date(item.plannedTime);
-  const time = today.toLocaleDateString("en-EN", {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-  });
+  const time = today.toLocaleTimeString("nl-NL").slice(0, 5);
 
-  console.log(time);
+  console.log(time.slice(0, 5));
   return (
     <>
       <CardContainer>
         <TimeWrapper>
           <Clock color="#7E60FA" />
-          <Time>{item.plannedTime}</Time>
+          <Time>{time}</Time>
         </TimeWrapper>
         <Direction>{item.direction}</Direction>
         <Train color="#7E60FA" size={35} />
@@ -45,6 +41,8 @@ const CardContainer = styled.div`
   border-radius: 8px;
   background-color: #fff;
   padding: 2rem;
+  border: 2px solid red;
+  /* min-width: 20rem; */
 `;
 
 const TimeWrapper = styled.div`

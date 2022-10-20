@@ -16,12 +16,11 @@ const SectionContainer = styled.section`
   display: grid;
   background-color: #3a415e;
   max-width: 1200px;
-
   gap: 1rem;
-  justify-items: center;
+  /* justify-items: center; */
 
   @media (min-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (min-width: 900px) {
