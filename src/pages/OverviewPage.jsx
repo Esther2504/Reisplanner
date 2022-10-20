@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Stations from "../components/Stations";
 
 const OverviewPage = () => {
@@ -28,7 +26,7 @@ const OverviewWrapper = styled.div`
   background-color: #3a415e;
   color: white;
   width: 75%;
-  margin: auto;
+  margin: 50px auto;
   border-radius: 8px;
   padding: 15px;
 `;

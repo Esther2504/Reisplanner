@@ -10,9 +10,7 @@ export default function Stations( {data} ) {
           return (
             <StationWrapper key={station.UICcode}>
               <StationName>
-                <h1>
-                  {station.naam} | {station.code}
-                </h1>
+                <h1> {station.naam} | {station.code} </h1>
                 <p>{station.land}</p>
               </StationName>
               <StationFacilities>
@@ -73,6 +71,12 @@ const StationWrapper = styled.div`
     font-size: 1.4rem;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+  }
 `;
 
 const StationName = styled.div`
@@ -81,6 +85,7 @@ const StationName = styled.div`
   h1 {
     font-size: 1.8rem;
     margin-top: -1rem;
+    padding: 0;
   }
 
   p {
@@ -94,6 +99,11 @@ const StationFacilities = styled.div`
   p {
     font-size: 1.3rem;
     display: flex;
+  }
+
+  @media screen and (max-width: 700px) {
+    margin: 20px;
+    text-align: center;
   }
 `;
 
