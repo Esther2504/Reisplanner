@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Wrapper, Welcome } from "../styles/profile.style";
+import {
+  Container,
+  Wrapper,
+  Welcome,
+  Button,
+  ButtonWrapper,
+  MainContainer
+} from "../styles/profile.style";
 
 const Profile = () => {
   const [display, setDisplay] = useState([]);
@@ -24,22 +31,37 @@ const Profile = () => {
       }, 500);
   };
 
+  const handlePlanner = (e) => {
+    e.preventDefault(),
+      setTimeout(() => {
+        navigate("/Planner");
+      }, 500);
+  };
+
+  const handleOverview = (e) => {
+    e.preventDefault(),
+      setTimeout(() => {
+        navigate("/Overview");
+      }, 500);
+  };
   //   console.log(display);
 
   return (
     <Container>
-        <h1>Profiel</h1>
+      <MainContainer>
+        {/* <h1>Profiel</h1> */}
         <Wrapper>
-      
-      <Welcome>
-        <h2>Welkom terug.</h2>
-        <p>Email: {display}</p>
-      </Welcome>
-      <button onClick={handleLogout}>Uitloggen</button>
-</Wrapper>
-      <div>Display saved routes?</div>
-      <div>QR code to share?</div>
-      <div>Check calander?</div>
+          <Welcome>
+            <h2>Welkom terug.</h2>
+            <p>Email: {display}</p>
+          </Welcome>
+          <button onClick={handleLogout}>Uitloggen</button>
+        </Wrapper>
+        <ButtonWrapper>
+          <Button onClick={handlePlanner}>Plan je route</Button>
+          <Button onClick={handleOverview}>Overzicht stations</Button>
+        </ButtonWrapper>
+      </MainContainer>
     </Container>
   );
 };

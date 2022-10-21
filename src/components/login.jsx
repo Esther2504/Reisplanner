@@ -27,8 +27,8 @@ const Login = () => {
   return (
     <>
       <Container>
-        <h1>Welkom!</h1>
-        <h2>Laat ons u helpen uw route naar het werk te plannen</h2>
+        <h1>Welkom bij Bleh!</h1>
+        <p><em>Wij plannen uw reis met een zucht</em></p>
         <LoginCard>
             <h3>Inloggen</h3>
             <Form  onSubmit={handleSubmit}>

@@ -1,17 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import SingleStationCard from "./SingleStationCard";
+import { useNavigate } from "react-router-dom";
 
 const SingleStation = ({ station, moreStations }) => {
+
+  const navigate = useNavigate();
+
   const departures = station.map((item, index) => (
     <SingleStationCard key={index} item={item} />
   ));
+
+  const handleBack = (e) => {
+    e.preventDefault(),
+      setTimeout(() => {
+        navigate("/Overview");
+      }, 100);
+  };
 
   return (
     <>
       <Header>Vetrektijden van station Den Bosch</Header>
       <SectionContainer>{departures}</SectionContainer>
-      <Button onClick={moreStations}>Meer vertrektijden</Button>
+      <Button onClick={handleBack}>Terug</Button>
+      <Button>Meer vertrektijden</Button>
     </>
   );
 };
@@ -27,6 +39,7 @@ const Header = styled.h4`
 const Button = styled.button`
   background-color: #7e60fa;
   border-radius: 3px;
+  margin-right: 1rem;
   outline: none;
   border: none;
   cursor: pointer;

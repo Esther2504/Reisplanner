@@ -6,21 +6,21 @@ import Stations from "../components/Stations";
 const OverviewPage = () => {
   const [stations, setStations] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`https://stoplight.io/mocks/blehteam/bleh-team/101174452/stations`)
-  //     .then((res) => res.json())
-  //     .then((data) => setStations(data));
-  // }, []);
-
   useEffect(() => {
-    fetch(`https://eb5e-2a02-fe9-c1f-135a-a89a-a08f-3c35-921d.eu.ngrok.io/api/stations`, {
-      headers: {
-        "ngrok-skip-browser-warning": "873947"
-      }
-    })
+    fetch(`https://stoplight.io/mocks/blehteam/bleh-team/101174452/stations`)
       .then((res) => res.json())
       .then((data) => setStations(data));
   }, []);
+
+  // useEffect(() => {
+  //   fetch(`https://eb5e-2a02-fe9-c1f-135a-a89a-a08f-3c35-921d.eu.ngrok.io/api/stations`, {
+  //     headers: {
+  //       "ngrok-skip-browser-warning": "873947"
+  //     }
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => setStations(data));
+  // }, []);
 
   return (
     <>

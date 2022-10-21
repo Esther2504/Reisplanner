@@ -1,7 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const MyPlanner = () => {
+
+  const navigate = useNavigate();
+
+  const handleBack = (e) => {
+    e.preventDefault(),
+      setTimeout(() => {
+        navigate("/Profile");
+      }, 100);
+  };
+
   return (
     <Form type="submit">
       {/* <InputContainer> */}
@@ -14,7 +25,11 @@ const MyPlanner = () => {
         <Input type="text" placeholder="Station" />
       </MyLabel>
       {/* </InputContainer> */}
+      <ButtonContainer>
+      <Button onClick={handleBack}>Terug</Button>
       <Button>Plan mijn reis</Button>
+        
+      </ButtonContainer>
     </Form>
   );
 };
@@ -51,6 +66,11 @@ const Input = styled.input`
   border-radius: 8px;
   outline: none;
   border: none;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 1rem;
 `;
 
 const Button = styled.button`
