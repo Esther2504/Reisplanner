@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, LoginCard, Form } from "../styles/login.style";
-import { signInWithGoogle } from "../utils/firebase";
+import { signInWithGoogle } from "../utils/firebase"
 
 const Login = () => {
 
