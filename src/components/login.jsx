@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, LoginCard, Form } from "../styles/login.style";
 
 const Login = () => {
 
+  //Navigation function
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -13,19 +14,28 @@ const Login = () => {
           }, 500)
       };
 
+//Setting value in LocalStorage
+    const [email, setEmail] = useState([]);
+
+    useEffect(() => {
+        localStorage.setItem('email', JSON.stringify(email));
+      }, [email]);
+
+    console.log(email);
+
+
   return (
     <>
       <Container>
-        <h1>Welcome!</h1>
-        <h2>Let us help you plan your route to work</h2>
+        <h1>Welkom!</h1>
+        <h2>Laat ons u helpen uw route naar het werk te plannen</h2>
         <LoginCard>
-            <h3>Login</h3>
-            <p>Don't have an account? <span><a href="#">Sign Up</a></span></p>
-            <Form onSubmit={handleSubmit}>
+            <h3>Inloggen</h3>
+            <Form  onSubmit={handleSubmit}>
                 <label>Email:
-                <input id="email" type="email" required/>
+                <input id="email" type="email" required onChange={(e) => setEmail(e.target.value)} />
                 </label>
-                <button type="submit">Login</button>
+                <button type="submit">Inloggen</button>
             </Form>
         </LoginCard>
       </Container>
