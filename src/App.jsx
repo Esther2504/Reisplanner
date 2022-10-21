@@ -8,7 +8,8 @@ import Planner from "./pages/Planner";
 function App() {
 
   return (
-    <BrowserRouter>
+    <>
+        <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="Profile" element={<ProfilePage />} />
@@ -17,6 +18,8 @@ function App() {
         <Route path="Station" element={<StationPage />} />
       </Routes>
     </BrowserRouter>
+    </>
+
   );
 }
 
