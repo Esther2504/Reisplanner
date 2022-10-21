@@ -12,11 +12,10 @@ export default function Stations({ data }) {
 
   let filteredData = data;
   if (stationName) {
-    setStationCode();
     filteredData = data.filter((station) => station.naam === stationName);
   }
   if (stationCode) {
-    setStationName();
+    document.getElementById("stationname").value = "";
     filteredData = data.filter((station) => station.code === stationCode);
   }
   if (stationFacilities) {
@@ -66,24 +65,33 @@ export default function Stations({ data }) {
     setStationFacilities();
     setStationTimes();
     setStationAssistance();
+    document.getElementById("facilities").checked = false;
+    document.getElementById("times").checked = false;
+    document.getElementById("assistance").checked = false;
+    document.getElementById("stationname").value = "";
+    document.getElementById("stationcode").value = "";
   };
-
-  console.log(filteredData);
 
   return (
     <>
       <StationFilter>
-        <select onChange={(e) => setStationName(e.target.value)}>
+        <select
+          id="stationname"
+          onChange={(e) => setStationName(e.target.value)}
+        >
           <option value=""> Selecteer op naam</option>
           {data.map((station) => {
             return (
-              <option style={{ color: "black" }} value={station.naam}>
+              <option style={{ color: "black" }} value={station.name}>
                 {station.naam}
               </option>
             );
           })}
         </select>
-        <select onChange={(e) => setStationCode(e.target.value)}>
+        <select
+          id="stationcode"
+          onChange={(e) => setStationCode(e.target.value)}
+        >
           <option value=""> Selecteer op code </option>
           {data.map((station) => {
             return (
@@ -93,12 +101,22 @@ export default function Stations({ data }) {
             );
           })}
         </select>
-        <input type="checkbox" onChange={handleFacilitiesFilter} />{" "}
+        
+        <input
+          id="facilities"
+          type="checkbox"
+          onChange={handleFacilitiesFilter}
+        />{" "}
         <p>Faciliteiten</p>
-        <input type="checkbox" onChange={handleTimesFilter} />{" "}
+        <input id="times" type="checkbox" onChange={handleTimesFilter} />{" "}
         <p>Vertrektijden</p>
-        <input type="checkbox" onChange={handleAssistanceFilter} />{" "}
+        <input
+          id="assistance"
+          type="checkbox"
+          onChange={handleAssistanceFilter}
+        />{" "}
         <p>Reisassistentie</p>
+        
         <button onClick={removeFilters}>Verwijder filters</button>
       </StationFilter>
       {filteredData.map((station) => {
@@ -152,12 +170,23 @@ const StationFilter = styled.div`
   margin: auto;
   display: flex;
   gap: 20px;
-  // justify-content: space-evenly;
+
   p {
     color: white;
     font-size: 1rem;
     margin-left: -1.5rem;
     line-height: 2rem;
+  }
+
+  button {
+    background-color: white;
+    border-style: none;
+    border-radius: 2px;
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    text-align: center;
   }
 `;
 
