@@ -1,54 +1,165 @@
-import React from 'react'
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 import { X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function Stations( {data} ) {
+export default function Stations({ data }) {
+  const [stationName, setStationName] = useState();
+  const [stationCode, setStationCode] = useState();
+  const [stationFacilities, setStationFacilities] = useState();
+  const [stationTimes, setStationTimes] = useState();
+  const [stationAssistance, setStationAssistance] = useState();
+
+  let filteredData = data;
+  if (stationName) {
+    setStationCode();
+    filteredData = data.filter((station) => station.naam === stationName);
+  }
+  if (stationCode) {
+    setStationName();
+    filteredData = data.filter((station) => station.code === stationCode);
+  }
+  if (stationFacilities) {
+    filteredData = filteredData.filter(
+      (station) => station.heeftFaciliteiten === true
+    );
+  }
+  if (stationTimes) {
+    filteredData = filteredData.filter(
+      (station) => station.heeftVertrektijden === true
+    );
+  }
+  if (stationAssistance) {
+    filteredData = filteredData.filter(
+      (station) => station.heeftReisassistentie === true
+    );
+  }
+
+  const handleFacilitiesFilter = () => {
+    if (stationFacilities === true) {
+      setStationFacilities();
+    } else if (!stationFacilities) {
+      setStationFacilities(true);
+    }
+  };
+
+  const handleTimesFilter = () => {
+    if (stationTimes === true) {
+      setStationTimes();
+    } else if (!stationTimes) {
+      setStationTimes(true);
+    }
+  };
+
+  const handleAssistanceFilter = () => {
+    if (stationAssistance === true) {
+      setStationAssistance();
+    } else if (!stationAssistance) {
+      setStationAssistance(true);
+    }
+  };
+
+  const removeFilters = () => {
+    setStationCode();
+    setStationName();
+    setStationCode();
+    setStationFacilities();
+    setStationTimes();
+    setStationAssistance();
+  };
+
+  console.log(filteredData);
+
   return (
     <>
-    {data.map((station) => {
-          return (
-            <StationWrapper key={station.UICcode}>
-              <StationName>
-                <h1> {station.naam} | {station.code} </h1>
-                <p>{station.land}</p>
-              </StationName>
-              <StationFacilities>
-                <p>
-                  {station.heeftFaciliteiten === false ? (
-                    <X color="red" />
-                  ) : (
-                    <ChevronDown color="green" />
-                  )}
-                  Faciliteiten
-                </p>
-                <p>
-                  {station.heeftFaciliteiten === false ? (
-                    <X color="red" />
-                  ) : (
-                    <ChevronDown color="green" />
-                  )}
-                  Vertrektijden
-                </p>
-                <p>
-                  {!station.heeftFaciliteiten === false ? (
-                    <X color="red" />
-                  ) : (
-                    <ChevronDown color="green" />
-                  )}
-                  Reisassistentie
-                </p>
-              </StationFacilities>
-              <Link to="/station">
-                <button>Zie Routes</button>
-              </Link>
-            </StationWrapper>
-          );
-        })}
+      <StationFilter>
+        <select onChange={(e) => setStationName(e.target.value)}>
+          <option value=""> Selecteer op naam</option>
+          {data.map((station) => {
+            return (
+              <option style={{ color: "black" }} value={station.naam}>
+                {station.naam}
+              </option>
+            );
+          })}
+        </select>
+        <select onChange={(e) => setStationCode(e.target.value)}>
+          <option value=""> Selecteer op code </option>
+          {data.map((station) => {
+            return (
+              <option style={{ color: "black" }} value={station.code}>
+                {station.code}
+              </option>
+            );
+          })}
+        </select>
+        <input type="checkbox" onChange={handleFacilitiesFilter} />{" "}
+        <p>Faciliteiten</p>
+        <input type="checkbox" onChange={handleTimesFilter} />{" "}
+        <p>Vertrektijden</p>
+        <input type="checkbox" onChange={handleAssistanceFilter} />{" "}
+        <p>Reisassistentie</p>
+        <button onClick={removeFilters}>Verwijder filters</button>
+      </StationFilter>
+      {filteredData.map((station) => {
+        return (
+          <StationWrapper key={station.UICcode}>
+            <StationName>
+              <h1>
+                {" "}
+                {station.naam} | {station.code}{" "}
+              </h1>
+              <p>{station.land}</p>
+            </StationName>
+            <StationFacilities>
+              <p>
+                {station.heeftFaciliteiten === false ? (
+                  <X color="red" />
+                ) : (
+                  <ChevronDown color="green" />
+                )}
+                Faciliteiten
+              </p>
+              <p>
+                {station.heeftVertrektijden === false ? (
+                  <X color="red" />
+                ) : (
+                  <ChevronDown color="green" />
+                )}
+                Vertrektijden
+              </p>
+              <p>
+                {station.heeftReisassistentie === false ? (
+                  <X color="red" />
+                ) : (
+                  <ChevronDown color="green" />
+                )}
+                Reisassistentie
+              </p>
+            </StationFacilities>
+            <Link to="/station">
+              <button>Zie Routes</button>
+            </Link>
+          </StationWrapper>
+        );
+      })}
     </>
-  )
+  );
 }
 
+const StationFilter = styled.div`
+  width: 95%;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  // justify-content: space-evenly;
+  p {
+    color: white;
+    font-size: 1rem;
+    margin-left: -1.5rem;
+    line-height: 2rem;
+  }
+`;
 
 const StationWrapper = styled.div`
   width: 95%;
@@ -106,4 +217,3 @@ const StationFacilities = styled.div`
     text-align: center;
   }
 `;
-
