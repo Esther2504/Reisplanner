@@ -6,7 +6,7 @@ const SingleStationCard = ({ item }) => {
   const today = new Date(item.plannedTime);
   const time = today.toLocaleTimeString("nl-NL").slice(0, 5);
 
-  console.log(time.slice(0, 5));
+  
   return (
     <>
       <CardContainer>
@@ -41,7 +41,9 @@ const CardContainer = styled.div`
   border-radius: 8px;
   background-color: #fff;
   padding: 2rem;
-  border: 2px solid red;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
   /* min-width: 20rem; */
 `;
 

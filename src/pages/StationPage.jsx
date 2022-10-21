@@ -5,20 +5,33 @@ import SingleStation from "../components/station/SingleStation";
 import styled from "styled-components";
 
 const StationPage = () => {
+  const numberOfStations = 5;
   const [station, setStation] = useState([]);
+  const [next, setNext] = useState(numberOfStations);
 
   useEffect(() => {
-    axios.get("/stations/1234").then((data) => {
-      setStation(data.data.station);
-      // console.log(data)
-    });
+    axios
+      .get("api/showstation/1", {
+        headers: { "ngrok-skip-browser-warning": "564645564" },
+      })
+      .then((data) => {
+        console.log(data.data);
+        setStation(data.data[0].direction);
+      });
   }, []);
+
+ 
+
+  const handleMoreStations = () => {
+    console.log("clicked");
+    setNext(next + numberOfStations);
+  };
 
   return (
     <Wrapper>
       <MainContainer>
         {/* pass station data to singleStation component */}
-        <SingleStation station={station} />
+        <SingleStation station={station} moreStations={handleMoreStations} />
       </MainContainer>
     </Wrapper>
   );
@@ -27,7 +40,7 @@ const StationPage = () => {
 export default StationPage;
 
 const Wrapper = styled.div`
-  background-color: #3a415e;
+  /* background-color: #3a415e; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
