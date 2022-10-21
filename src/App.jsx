@@ -3,7 +3,7 @@ import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import OverviewPage from "./pages/OverviewPage";
 import StationPage from "./pages/StationPage";
-import { useState, useEffect } from "react";
+import Planner from "./pages/Planner";
 
 function App() {
 
@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="Profile" element={<ProfilePage />} />
+        <Route path="Planner" element={<Planner />} />
         <Route path="Overview" element={<OverviewPage />} />
         <Route path="Station" element={<StationPage />} />
       </Routes>

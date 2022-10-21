@@ -30,7 +30,7 @@ input, button, textarea, select {
 }
 
 /* default font styles */
-p, h1, h2, h3 {
+p, h1, h2, h3, h4 {
   color: #3a415e;
   overflow-wrap: break-word;
 }
@@ -56,9 +56,15 @@ h2 {
 }
 
 h3 {
-  font-style: normal;
   font-weight: 400;
   font-size: 3.2rem;
+  line-height: 36px;
+  letter-spacing: -0.285714px;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 2.2rem;
   line-height: 36px;
   letter-spacing: -0.285714px;
 }
