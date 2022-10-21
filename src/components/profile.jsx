@@ -6,7 +6,7 @@ import {
   Welcome,
   Button,
   ButtonWrapper,
-  MainContainer
+  MainContainer,
 } from "../styles/profile.style";
 
 const Profile = () => {
@@ -40,9 +40,9 @@ const Profile = () => {
 
   const handleOverview = (e) => {
     e.preventDefault(),
-      setTimeout(() => {
-        navigate("/Overview");
-      }, 500);
+      // setTimeout(() => {
+      navigate("/Overview");
+    // }, 500);
   };
   //   console.log(display);
 

@@ -1,19 +1,24 @@
 import styled from "styled-components";
 
+export const Main = styled.main`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Container = styled.div`
   /* background-color: #7e60fa; */
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   display: flex;
-  gap: 0.5rem;
+  gap: 2rem;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
-  height: 100vh;
 
   h1,
   h2 {
-    margin-bottom: 0;
-    /* margin: 0 auto; */
+    margin: 0 auto;
     /* padding: 5px; */
     text-align: center;
   }

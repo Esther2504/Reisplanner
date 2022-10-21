@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, LoginCard, Form } from "../styles/login.style";
-import { signInWithGoogle } from "../utils/firebase";
-
+import { Container, LoginCard, Form, Main } from "../styles/login.style";
+// import { signInWithGoogle } from "../utils/firebase";
+// import { getAuth, onAuthStateChanged } from "firebase/auth";
 const Login = () => {
   //Navigation function
   const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault(),
       setTimeout(() => {
         navigate("Profile");
       }, 500);
   };
-
   //Setting value in LocalStorage
   const [email, setEmail] = useState([]);
-
   useEffect(() => {
     localStorage.setItem("email", JSON.stringify(email));
   }, [email]);
-
   console.log(email);
+  // const auth = getAuth();
+  // const user = auth.currentUser;
+  // useEffect(() => {
+  //   const listener = onAuthStateChanged(auth, (user) => {
+  //     handleSubmit();
+  //   });
+  //   return () => {
+  //     listener();
+  //   };
+  // }, []);
 
   return (
     <>
+    <Main>
       <Container>
         <h1>Welkom bij Bleh!</h1>
         <p>
@@ -43,10 +50,11 @@ const Login = () => {
               />
             </label>
             <button type="submit">Inloggen</button>
-            <button onClick={signInWithGoogle}>Google login</button>
+            {/* <button onClick={signInWithGoogle}>Google login</button> */}
           </Form>
         </LoginCard>
       </Container>
+      </Main>
     </>
   );
 };
