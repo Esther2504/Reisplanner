@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, LoginCard, Form } from "../styles/login.style";
+import { signInWithGoogle } from "../utils/firebase";
 
 const Login = () => {
 
@@ -36,6 +37,7 @@ const Login = () => {
                 <input id="email" type="email" required onChange={(e) => setEmail(e.target.value)} />
                 </label>
                 <button type="submit">Inloggen</button>
+                <button onClick={signInWithGoogle}>Google Login</button>
             </Form>
         </LoginCard>
       </Container>
