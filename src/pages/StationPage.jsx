@@ -10,17 +10,11 @@ const StationPage = () => {
   const [next, setNext] = useState(numberOfStations);
 
   useEffect(() => {
-    axios
-      .get("api/showstation/1", {
-        headers: { "ngrok-skip-browser-warning": "564645564" },
-      })
-      .then((data) => {
-        console.log(data.data);
-        setStation(data.data[0].direction);
-      });
+    axios.get("stations/1234").then((data) => {
+      console.log(data.data.station);
+      setStation(data.data.station);
+    });
   }, []);
-
- 
 
   const handleMoreStations = () => {
     console.log("clicked");

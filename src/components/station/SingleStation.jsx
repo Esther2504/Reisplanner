@@ -9,7 +9,7 @@ const SingleStation = ({ station, moreStations }) => {
 
   return (
     <>
-      <Header>Vetrektijden van station Den Haag Centraal</Header>
+      <Header>Vetrektijden van station Den Bosch</Header>
       <SectionContainer>{departures}</SectionContainer>
       <Button onClick={moreStations}>Meer vertrektijden</Button>
     </>
