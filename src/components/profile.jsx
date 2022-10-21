@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { Container, Wrapper, Welcome } from "../styles/profile.style";
 
 const Profile = () => {
   const [display, setDisplay] = useState([]);
@@ -14,29 +14,33 @@ const Profile = () => {
     return;
   }, []);
 
-
   //To logout and return to login screen
   const navigate = useNavigate();
 
   const handleLogout = (e) => {
-      e.preventDefault(),
-        setTimeout(() => {
-          navigate("/");
-        }, 500)
-    };
+    e.preventDefault(),
+      setTimeout(() => {
+        navigate("/");
+      }, 500);
+  };
 
   //   console.log(display);
 
   return (
-    <div>
-      <h1>Profiel</h1>
-      <h2>Email: {display}</h2>
+    <Container>
+        <h1>Profiel</h1>
+        <Wrapper>
       
+      <Welcome>
+        <h2>Welkom terug.</h2>
+        <p>Email: {display}</p>
+      </Welcome>
+      <button onClick={handleLogout}>Uitloggen</button>
+</Wrapper>
       <div>Display saved routes?</div>
       <div>QR code to share?</div>
       <div>Check calander?</div>
-      <button onClick={handleLogout}>Uitloggen</button>
-    </div>
+    </Container>
   );
 };
 export default Profile;
