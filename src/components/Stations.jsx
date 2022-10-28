@@ -10,9 +10,15 @@ export default function Stations({ data }) {
   const [stationTimes, setStationTimes] = useState();
   const [stationAssistance, setStationAssistance] = useState();
 
+  // console.log(data.payload)
+
+
+
+console.log(data)
+
   let filteredData = data;
   if (stationName) {
-    filteredData = data.filter((station) => station.naam === stationName);
+    filteredData = data.filter((station) => station.namen.lang === stationName);
   }
   if (stationCode) {
     document.getElementById("stationname").value = "";
@@ -82,8 +88,8 @@ export default function Stations({ data }) {
           <option value=""> Selecteer op naam</option>
           {data.map((station) => {
             return (
-              <option style={{ color: "black" }} value={station.name}>
-                {station.naam}
+              <option style={{ color: "black" }} value={station.namen.lang}>
+                {station.namen.lang}
               </option>
             );
           })}
@@ -125,7 +131,7 @@ export default function Stations({ data }) {
             <StationName>
               <h1>
                 {" "}
-                {station.naam} | {station.code}{" "}
+                {station.namen.lang} | {station.code}{" "}
               </h1>
               <p>{station.land}</p>
             </StationName>

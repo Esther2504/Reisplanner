@@ -5,28 +5,42 @@ import Stations from "../components/Stations";
 
 const OverviewPage = () => {
   const [stations, setStations] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://stoplight.io/mocks/blehteam/bleh-team/101174452/stations`)
-      .then((res) => res.json())
-      .then((data) => setStations(data));
-  }, []);
+  const [isLoaded, setLoaded] = useState(false)
 
   // useEffect(() => {
-  //   fetch(`https://eb5e-2a02-fe9-c1f-135a-a89a-a08f-3c35-921d.eu.ngrok.io/api/stations`, {
-  //     headers: {
-  //       "ngrok-skip-browser-warning": "873947"
-  //     }
-  //   })
+  //   fetch(`https://stoplight.io/mocks/blehteam/bleh-team/101174452/stations`)
   //     .then((res) => res.json())
   //     .then((data) => setStations(data));
   // }, []);
+
+  useEffect(() => {
+    fetch(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/stations?land=nl`, {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        "Ocp-Apim-Subscription-Key": "process.env.REACT_APP_API_KEY"
+      }
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        
+        setStations(data.payload.filter((station) => station.land == "NL"))
+        
+        setLoaded(true)
+      });
+     ;
+  }, []);
+
+  console.log(stations)
 
   return (
     <>
       <h1 style={{textAlign: "center", marginTop: "30px"}}>Overzicht Stations</h1>
       <OverviewWrapper>
-        <Stations data={stations} />
+      {
+                isLoaded ?
+        <Stations data={stations} /> : <p>Is loading....</p>
+}
       </OverviewWrapper>
     </>
   );
