@@ -5,27 +5,41 @@ import SingleStation from "../components/station/SingleStation";
 import styled from "styled-components";
 
 const StationPage = () => {
-  const numberOfStations = 5;
+  // const numberOfStations = 5;
   const [station, setStation] = useState([]);
-  const [next, setNext] = useState(numberOfStations);
+  // const [next, setNext] = useState(numberOfStations);
+  const [isLoaded, setLoaded] = useState(false)
+
+
+  console.log(station)
+
+  // const handleMoreStations = () => {
+  //   console.log("clicked");
+  //   setNext(next + numberOfStations);
+  // };
+
+  let config = {
+    headers: {
+      "Ocp-Apim-Subscription-Key": "process.env.REACT_APP_API_KEY",
+    }
+  }
 
   useEffect(() => {
-    axios.get("stations/1234").then((data) => {
-      console.log(data.data.station);
-      setStation(data.data.station);
+    axios.get("?station=ATN", config).then((data) => {
+      console.log(data);
+      // setStation(data.data.station);
     });
   }, []);
-
-  const handleMoreStations = () => {
-    console.log("clicked");
-    setNext(next + numberOfStations);
-  };
 
   return (
     <Wrapper>
       <MainContainer>
         {/* pass station data to singleStation component */}
-        <SingleStation station={station} moreStations={handleMoreStations} />
+        {
+                isLoaded ?
+        <SingleStation station={station} moreStations={handleMoreStations} /> :
+<p>Loading....</p>
+}
       </MainContainer>
     </Wrapper>
   );

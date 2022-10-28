@@ -6,19 +6,21 @@ import Stations from "../components/Stations";
 const OverviewPage = () => {
   const [stations, setStations] = useState([]);
   const [isLoaded, setLoaded] = useState(false)
-
+  const [station, setStation] = useState([]);
   // useEffect(() => {
   //   fetch(`https://stoplight.io/mocks/blehteam/bleh-team/101174452/stations`)
   //     .then((res) => res.json())
   //     .then((data) => setStations(data));
   // }, []);
 
+  const APIKEY = "process.env.REACT_APP_API_KEY"
+
   useEffect(() => {
     fetch(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/stations?land=nl`, {
       method: 'GET',
       mode: 'cors',
       headers: {
-        "Ocp-Apim-Subscription-Key": "process.env.REACT_APP_API_KEY"
+        "Ocp-Apim-Subscription-Key": APIKEY
       }
     })
       .then((res) => res.json())
@@ -30,6 +32,25 @@ const OverviewPage = () => {
       });
      ;
   }, []);
+
+  // useEffect(() => {
+  //   fetch(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=ATN`, {
+  //     method: 'GET',
+  //     mode: 'cors',
+  //     headers: {
+  //       "Ocp-Apim-Subscription-Key": APIKEY
+  //     }
+  //   })
+  //     .then((res) => res.json())
+  //     .then((datas) => {
+        
+  //       setStation(datas)
+        
+  //       setLoaded(true)
+  //       console.log("WORK")
+  //     });
+  //    ;
+  // }, []);
 
   console.log(stations)
 

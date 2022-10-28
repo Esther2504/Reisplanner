@@ -7,6 +7,8 @@ const SingleStation = ({ station, moreStations }) => {
 
   const navigate = useNavigate();
 
+  // console.log(station)
+
   const departures = station.map((item, index) => (
     <SingleStationCard key={index} item={item} />
   ));

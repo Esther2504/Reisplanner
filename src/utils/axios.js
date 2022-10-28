@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: 'https://stoplight.io/mocks/blehteam/bleh-team/101174452/'
+  baseURL: 'https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures'
 })
 
 export default instance;
