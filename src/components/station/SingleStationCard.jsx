@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Train, Clock } from "lucide-react";
 
 const SingleStationCard = ({ item }) => {
-  const today = new Date(item.plannedTime);
+  const today = new Date(item.plannedDateTime);
   const time = today.toLocaleTimeString("nl-NL").slice(0, 5);
 
   
@@ -22,7 +22,7 @@ const SingleStationCard = ({ item }) => {
           {item.routeStations.map((station, index) => (
             <>
               <List key={index}>
-                <li>{station.stationName}</li>
+                <li>{station.mediumName}</li>
               </List>
             </>
           ))}

@@ -13,21 +13,24 @@ const StationPage = () => {
 
   console.log(station)
 
-  // const handleMoreStations = () => {
-  //   console.log("clicked");
-  //   setNext(next + numberOfStations);
-  // };
+  const handleMoreStations = () => {
+    console.log("clicked");
+    setNext(next + numberOfStations);
+  };
+
+  const APIKEY = "process.env.REACT_APP_API_KEY"
 
   let config = {
     headers: {
-      "Ocp-Apim-Subscription-Key": "process.env.REACT_APP_API_KEY",
+      "Ocp-Apim-Subscription-Key": "f37c0dc4e1284e3495188b7c255ff626",
     }
   }
 
   useEffect(() => {
     axios.get("?station=ATN", config).then((data) => {
       console.log(data);
-      // setStation(data.data.station);
+      setStation(data.data.payload.departures);
+      setLoaded(true)
     });
   }, []);
 
