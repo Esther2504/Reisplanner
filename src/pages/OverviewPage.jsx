@@ -20,7 +20,7 @@ const OverviewPage = () => {
       method: 'GET',
       mode: 'cors',
       headers: {
-        "Ocp-Apim-Subscription-Key": APIKEY
+        "Ocp-Apim-Subscription-Key": "f37c0dc4e1284e3495188b7c255ff626",
       }
     })
       .then((res) => res.json())
@@ -32,25 +32,6 @@ const OverviewPage = () => {
       });
      ;
   }, []);
-
-  // useEffect(() => {
-  //   fetch(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=ATN`, {
-  //     method: 'GET',
-  //     mode: 'cors',
-  //     headers: {
-  //       "Ocp-Apim-Subscription-Key": APIKEY
-  //     }
-  //   })
-  //     .then((res) => res.json())
-  //     .then((datas) => {
-        
-  //       setStation(datas)
-        
-  //       setLoaded(true)
-  //       console.log("WORK")
-  //     });
-  //    ;
-  // }, []);
 
   console.log(stations)
 

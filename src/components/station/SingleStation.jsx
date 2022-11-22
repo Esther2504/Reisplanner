@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SingleStationCard from "./SingleStationCard";
 import { useNavigate } from "react-router-dom";
 
-const SingleStation = ({ station, moreStations }) => {
+const SingleStation = ({ station, stationname, moreStations }) => {
 
   const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ const SingleStation = ({ station, moreStations }) => {
 
   return (
     <>
-      <Header>Vetrektijden van station Den Bosch</Header>
+      <Header>Vetrektijden van station {stationname}</Header>
       <SectionContainer>{departures}</SectionContainer>
       <Button onClick={handleBack}>Terug</Button>
       <Button>Meer vertrektijden</Button>

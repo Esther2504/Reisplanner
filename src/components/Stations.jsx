@@ -161,7 +161,7 @@ console.log(data)
                 Reisassistentie
               </p>
             </StationFacilities>
-            <Link to="/station">
+            <Link to={`/${station.code}`}>
               <button>Zie Routes</button>
             </Link>
           </StationWrapper>

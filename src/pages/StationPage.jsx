@@ -3,20 +3,24 @@ import { useState, useEffect } from "react";
 import axios from "../utils/axios";
 import SingleStation from "../components/station/SingleStation";
 import styled from "styled-components";
+import { useParams } from "react-router-dom";
 
 const StationPage = () => {
   // const numberOfStations = 5;
-  const [station, setStation] = useState([]);
+  const [stationdata, setStationdata] = useState([]);
   // const [next, setNext] = useState(numberOfStations);
   const [isLoaded, setLoaded] = useState(false)
 
 
-  console.log(station)
 
   const handleMoreStations = () => {
     console.log("clicked");
     setNext(next + numberOfStations);
   };
+
+  const { station } = useParams();
+
+  console.log(station)
 
   const APIKEY = "process.env.REACT_APP_API_KEY"
 
@@ -27,12 +31,14 @@ const StationPage = () => {
   }
 
   useEffect(() => {
-    axios.get("?station=ATN", config).then((data) => {
+    axios.get(`?station=${station}`, config).then((data) => {
       console.log(data);
-      setStation(data.data.payload.departures);
+      setStationdata(data.data.payload.departures);
       setLoaded(true)
     });
   }, []);
+
+  console.log(stationdata)
 
   return (
     <Wrapper>
@@ -40,7 +46,7 @@ const StationPage = () => {
         {/* pass station data to singleStation component */}
         {
                 isLoaded ?
-        <SingleStation station={station} moreStations={handleMoreStations} /> :
+        <SingleStation station={stationdata} stationname={station} moreStations={handleMoreStations} /> :
 <p>Loading....</p>
 }
       </MainContainer>
