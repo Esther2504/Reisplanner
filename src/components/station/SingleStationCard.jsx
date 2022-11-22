@@ -16,7 +16,7 @@ const SingleStationCard = ({ item }) => {
         </TimeWrapper>
         <Direction>{item.direction}</Direction>
         <Train color="#7E60FA" size={35} />
-        <Track>Van: spoor {item.plannedTrack}</Track>
+        <Track>Spoor {item.plannedTrack}</Track>
         <Via>Via:</Via>
         <ViaWrapper>
           {item.routeStations.map((station, index) => (

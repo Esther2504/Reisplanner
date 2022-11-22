@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Trips from "./Trips";
 
 const MyPlanner = () => {
-
+  const [start, setStart] = useState();
+  const [end, setEnd] = useState();
+  const [click, setClick] = useState(false);
   const navigate = useNavigate();
 
   const handleBack = (e) => {
@@ -13,30 +17,35 @@ const MyPlanner = () => {
       }, 100);
   };
 
+  
+
   return (
-    <Form type="submit">
+    <>
+    <Form>
       {/* <InputContainer> */}
       <MyLabel>
         <Label>Van</Label>
-        <Input type="text" placeholder="Station" />
+        <Input type="text" placeholder="Station" onChange={(e) => setStart(e.target.value)} />
       </MyLabel>
       <MyLabel>
         <Label>Naar</Label>
-        <Input type="text" placeholder="Station" />
+        <Input type="text" placeholder="Station" onChange={(e) => setEnd(e.target.value)} />
       </MyLabel>
       {/* </InputContainer> */}
       <ButtonContainer>
       <Button onClick={handleBack}>Terug</Button>
-      <Button>Plan mijn reis</Button>
-        
+      <Button onClick={(e) => setClick(true)}>Plan mijn reis</Button>
+      
       </ButtonContainer>
     </Form>
+         {click ? <Trips start={start} end={end}/> : null}
+         </>
   );
 };
 
 export default MyPlanner;
 
-const Form = styled.form`
+const Form = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

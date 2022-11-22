@@ -31,7 +31,7 @@ const StationPage = () => {
   }
 
   useEffect(() => {
-    axios.get(`?station=${station}`, config).then((data) => {
+    axios.get(`?station=${station}&maxJourneys=10`, config).then((data) => {
       console.log(data);
       setStationdata(data.data.payload.departures);
       setLoaded(true)
@@ -57,7 +57,6 @@ const StationPage = () => {
 export default StationPage;
 
 const Wrapper = styled.div`
-  /* background-color: #3a415e; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -67,6 +66,9 @@ const Wrapper = styled.div`
 `;
 
 const MainContainer = styled.main`
-  background-color: #fff;
+background-color: #3a415e;
+width: 90%;
   margin: 0 auto;
+  padding: 2%;
+  border-radius: 8px;
 `;

@@ -22,7 +22,7 @@ const SingleStation = ({ station, stationname, moreStations }) => {
 
   return (
     <>
-      <Header>Vetrektijden van station {stationname}</Header>
+      <Header>Vertrektijden van station {stationname}</Header>
       <SectionContainer>{departures}</SectionContainer>
       <Button onClick={handleBack}>Terug</Button>
       <Button>Meer vertrektijden</Button>
@@ -33,7 +33,7 @@ const SingleStation = ({ station, stationname, moreStations }) => {
 export default SingleStation;
 
 const Header = styled.h4`
-  color: #3a415e;
+  color: white;
   padding-bottom: 2rem;
   font-weight: 700;
 `;
