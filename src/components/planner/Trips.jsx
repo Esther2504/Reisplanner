@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import styled from 'styled-components';
 
 export default function Trips( {start, end} ) {
     const [routes, setRoutes] = useState([]);
@@ -29,7 +30,7 @@ export default function Trips( {start, end} ) {
 
 
   return (
-    <div>
+    <TripCard>
             {isLoaded ? (
         routes.trips.map((trip) => {
             return (<>
@@ -61,6 +62,20 @@ export default function Trips( {start, end} ) {
         })
       )
         : null}
-    </div>
+    </TripCard>
   )
 }
+
+
+const TripCard = styled.div`
+  background-color: #3a415e;
+  color: white;
+  width: 100%;
+  margin: 50px auto;
+  border-radius: 8px;
+  padding: 15px;
+
+  p {
+    color: white;
+  }
+`;
