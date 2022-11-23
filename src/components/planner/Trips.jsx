@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
+import Leg from './Leg';
 
 export default function Trips( {start, end} ) {
     const [routes, setRoutes] = useState([]);
@@ -30,39 +31,31 @@ export default function Trips( {start, end} ) {
 
 
   return (
-    <TripCard>
+    // <TripCard>
+    <>
             {isLoaded ? (
         routes.trips.map((trip) => {
-            return (<>
+            return (
+              <TripCard>
             {/* Legs mappenn */}
-            <p>{trip.plannedDurationInMinutes} minutes</p>
-
+            <div>
+            <p>{trip.plannedDurationInMinutes} minuten</p>
+            <p>{trip.transfers}x overstappen</p>
+            </div>
+            <div>
             {trip.legs.map((leg) => {
                 return (
-                    <>
-                    <p>{leg.origin.actualDateTime}</p>
-                    <p>spoor {leg.origin.plannedTrack}</p>
-                    <p>Richting {leg.direction}</p>
-                    <p>{leg.origin.name}</p>
-                    <p>{leg.destination.actualDateTime}</p>
-                    <p>spoor {leg.destination.plannedTrack}</p>
-                    <p>spoor {leg.destination.exitSide}</p>
-                    <p>{leg.destination.name}</p>
-                    <p>{leg.product.displayName}</p>
-                    <p>{leg.cancelled}</p>
-                    <p>{leg.crowdForecast}</p>
-                    <p>{leg.plannedDurationInMinutes} minutes</p>
-                    ---
-                    </>
+                    <Leg leg={leg} />
                 )
             })}
-            -----
-            </>
+            </div>
+            </TripCard>
             )
         })
       )
         : null}
-    </TripCard>
+    {/* // </TripCard> */}
+    </>
   )
 }
 
@@ -74,6 +67,8 @@ const TripCard = styled.div`
   margin: 50px auto;
   border-radius: 8px;
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
 
   p {
     color: white;

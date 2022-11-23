@@ -5,6 +5,7 @@ export default createGlobalStyle`
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
+  // border: 1px solid red;
 }
 
 html {
