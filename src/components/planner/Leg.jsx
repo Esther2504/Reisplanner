@@ -78,6 +78,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   width: 600px;
 
+
   .vl {
     border-left: 2px solid purple;
     height: 180px;
@@ -103,7 +104,7 @@ const Trip = styled.div`
 
 const StartStation = styled.div`
   display: grid;
-  width: 100%;
+  // width: 100%;
   justify-content: space-between;
   border-bottom: 1px solid white;
   grid-template-columns: 50px 490px 200px;
@@ -114,7 +115,8 @@ const StartStation = styled.div`
   }
 `;
 
-const Train = styled.div``;
+const Train = styled.div`
+margin-left: 10px;`;
 
 const EndStation = styled.div`
   display: grid;
@@ -134,6 +136,8 @@ const TripInfo = styled.div`
   justify-content: space-evenly;
   // border-bottom: 1px solid white;
   grid-template-columns: 50px 490px 200px;
+  align-items: center;
+  height: 60px;
 
   .stationname {
     font-size: 3rem;

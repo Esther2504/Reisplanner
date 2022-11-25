@@ -14,7 +14,7 @@ export default function Trips( {start, end} ) {
         method: 'GET',
         mode: 'cors',
         headers: {
-          "Ocp-Apim-Subscription-Key": "f37c0dc4e1284e3495188b7c255ff626",
+          "Ocp-Apim-Subscription-Key": APIKEY,
         }
       })
         .then((res) => res.json())
@@ -37,8 +37,9 @@ export default function Trips( {start, end} ) {
         routes.trips.map((trip) => {
             return (
               <TripCard>
-            {/* Legs mappenn */}
+            {/* if state is true, show legs. in apart component zetten */}
             <div>
+            <p>{trip.legs[0].origin.plannedDateTime} - {trip.legs[(trip.legs).length - 1].destination.plannedDateTime}</p>
             <p>{trip.plannedDurationInMinutes} minuten</p>
             <p>{trip.transfers}x overstappen</p>
             </div>
@@ -69,6 +70,7 @@ const TripCard = styled.div`
   padding: 15px;
   display: flex;
   justify-content: space-between;
+  overflow-x: hidden;
 
   p {
     color: white;

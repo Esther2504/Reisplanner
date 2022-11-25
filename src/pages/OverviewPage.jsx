@@ -20,7 +20,7 @@ const OverviewPage = () => {
       method: 'GET',
       mode: 'cors',
       headers: {
-        "Ocp-Apim-Subscription-Key": "f37c0dc4e1284e3495188b7c255ff626",
+        "Ocp-Apim-Subscription-Key": APIKEY,
       }
     })
       .then((res) => res.json())
