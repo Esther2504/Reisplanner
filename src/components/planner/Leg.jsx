@@ -116,7 +116,8 @@ const StartStation = styled.div`
 `;
 
 const Train = styled.div`
-margin-left: 10px;`;
+margin-left: 10px;
+`;
 
 const EndStation = styled.div`
   display: grid;
@@ -138,6 +139,7 @@ const TripInfo = styled.div`
   grid-template-columns: 50px 490px 200px;
   align-items: center;
   height: 60px;
+  
 
   .stationname {
     font-size: 3rem;

@@ -22,33 +22,77 @@ const MyPlanner = () => {
 
   return (
     <>
-    <Form>
-      {/* <InputContainer> */}
-      <MyLabel>
-        <Label>Van</Label>
-        <Input type="text" placeholder="Station" onChange={(e) => setStart(e.target.value)} />
-      </MyLabel>
-      <MyLabel>
-        <Label>Naar</Label>
-        <Input type="text" placeholder="Station" onChange={(e) => setEnd(e.target.value)} />
-      </MyLabel>
-      <MyLabel>
-        <Label>Aankomst tijd</Label>
-        <Input type="datetime-local" onChange={(e) => setDateTime(e.target.value)} />
-      </MyLabel>
-      {/* </InputContainer> */}
-      <ButtonContainer>
-      <Button onClick={handleBack}>Terug</Button>
-      <Button onClick={(e) => setClick(true)}>Plan mijn reis</Button>
-      
-      </ButtonContainer>
-    </Form>
-         {click ? <Trips start={start} end={end} datetime={datetime} /> : null}
+
+         {click ? 
+         <MainContainer2>
+         <Form2>
+         {/* <InputContainer> */}
+         <MyLabel>
+           <Label>Van</Label>
+           <Input type="text" placeholder="Station" onChange={(e) => setStart(e.target.value)} />
+         </MyLabel>
+         <MyLabel>
+           <Label>Naar</Label>
+           <Input type="text" placeholder="Station" onChange={(e) => setEnd(e.target.value)} />
+         </MyLabel>
+         <MyLabel>
+           <Label>Tijd</Label>
+           <Input type="datetime-local" onChange={(e) => setDateTime(e.target.value)} />
+         </MyLabel>
+         {/* </InputContainer> */}
+         <ButtonContainer>
+         <Button onClick={handleBack}>Terug</Button>
+         <Button onClick={(e) => setClick(true)}>Plan mijn reis</Button>
+         
+         </ButtonContainer>
+       </Form2>
+         <Trips start={start} end={end} datetime={datetime} /> 
+         </MainContainer2>
+         :    
+         <MainContainer>
+          <Form>
+         {/* <InputContainer> */}
+         <MyLabel>
+           <Label>Van</Label>
+           <Input type="text" placeholder="Station" onChange={(e) => setStart(e.target.value)} />
+         </MyLabel>
+         <MyLabel>
+           <Label>Naar</Label>
+           <Input type="text" placeholder="Station" onChange={(e) => setEnd(e.target.value)} />
+         </MyLabel>
+         <MyLabel>
+           <Label>Tijd</Label>
+           <Input type="datetime-local" onChange={(e) => setDateTime(e.target.value)} />
+         </MyLabel>
+         {/* </InputContainer> */}
+         <ButtonContainer>
+         <Button onClick={handleBack}>Terug</Button>
+         <Button onClick={(e) => setClick(true)}>Plan mijn reis</Button>
+         
+         </ButtonContainer>
+       </Form>
+       </MainContainer>
+       }
          </>
   );
 };
 
 export default MyPlanner;
+
+const MainContainer = styled.main`
+
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // max-width: 800px;
+  // min-height: 100vh;
+  margin: auto 0;
+`;
+const MainContainer2 = styled.main`
+display: flex;
+
+`;
+
 
 const Form = styled.div`
   display: flex;
@@ -58,8 +102,21 @@ const Form = styled.div`
   background-color: #3a415e;
   height: 250px;
   align-items: center;
-  border-radius: 8px;
 `;
+
+const Form2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #3a415e;
+  height: 350px;
+  width: 450px;
+  align-items: center;
+  border-radius: 8px;
+  align-self: left;
+`;
+
 
 const Label = styled.label`
   font-size: 1.4rem;

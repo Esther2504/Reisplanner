@@ -33,7 +33,6 @@ const OverviewPage = () => {
      ;
   }, []);
 
-  console.log(stations)
 
   return (
     <>
