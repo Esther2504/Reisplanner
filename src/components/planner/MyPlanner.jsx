@@ -7,6 +7,7 @@ import Trips from "./Trips";
 const MyPlanner = () => {
   const [start, setStart] = useState();
   const [end, setEnd] = useState();
+  const [datetime, setDateTime] = useState();
   const [click, setClick] = useState(false);
   const navigate = useNavigate();
 
@@ -17,7 +18,7 @@ const MyPlanner = () => {
       }, 100);
   };
 
-  
+  console.log(datetime)
 
   return (
     <>
@@ -31,6 +32,10 @@ const MyPlanner = () => {
         <Label>Naar</Label>
         <Input type="text" placeholder="Station" onChange={(e) => setEnd(e.target.value)} />
       </MyLabel>
+      <MyLabel>
+        <Label>Aankomst tijd</Label>
+        <Input type="datetime-local" onChange={(e) => setDateTime(e.target.value)} />
+      </MyLabel>
       {/* </InputContainer> */}
       <ButtonContainer>
       <Button onClick={handleBack}>Terug</Button>
@@ -38,7 +43,7 @@ const MyPlanner = () => {
       
       </ButtonContainer>
     </Form>
-         {click ? <Trips start={start} end={end}/> : null}
+         {click ? <Trips start={start} end={end} datetime={datetime} /> : null}
          </>
   );
 };
